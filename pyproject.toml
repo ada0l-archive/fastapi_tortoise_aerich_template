@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "application"
+version = "0.1.0"
+description = ""
+authors = ["ada0l <andreika.varfolomeev@yandex.ru>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.75.2"
+uvicorn = "^0.17.6"
+aerich = "^0.6.3"
+asyncpg = "^0.25.0"
+tortoise-orm = "^0.19.0"
+loguru = "^0.6.0"
+pydantic = {extras = ["dotenv"], version = "^1.9.0"}
+requests = "^2.27.1"
+httpx = "^0.22.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.1.2"
+pytest-asyncio = "^0.18.3"
+
+
+[tool.aerich]
+tortoise_orm = "backend.core.database.TORTOISE_ORM"
+location = "./migrations"
+src_folder = "./."
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
